@@ -1,3 +1,16 @@
+#--------------- FUNÇÕES ESPECIAIS ---------------
+import time
+
+def slowprint(texto, atraso=0.02):
+  for c in texto:
+    print(c,end='',flush=True)
+    time.sleep(atraso)
+
+def veryslowprint(texto, atraso=0.5):
+  for c in texto:
+    print(c,end='',flush=True)
+    time.sleep(atraso)
+
 #--------------- ITENS DO TUTORIAL ---------------
 chave_chavosa = False
 
@@ -6,8 +19,8 @@ def inicio():
     print('''
                                 Bem-vindo a Dylendious
 ''')
-    print('''
-    Você acordou caído em um lugar fechado
+    slowprint('''
+    Você acordou caído em um lugar fechado\n
 ''')
     resposta_1 = input("   >> ")
     while(resposta_1.upper() != 'LEVANTAR'):
@@ -16,10 +29,10 @@ def inicio():
         comodo()
 
 def comodo():
-        print('''
+        slowprint('''
     É um cômodo é pequeno.
     À sua ESQUERDA há uma escrivaninha velha,
-    à DIREITA, uma caixa, e à FRENTE uma porta.
+    à DIREITA, uma caixa, e à FRENTE uma porta.\n
 ''')
         caminho = ['ESQUERDA', 'DIREITA', 'FRENTE']
         decisao_1 = input("   >> ")
@@ -35,10 +48,10 @@ def comodo():
 
 #--------------- CAMINHO DA DIREITA --------------
 def caminhoDireita():
-        print('''
+        slowprint('''
     Você encontrou uma caixa de madeira simples sem cadeados.
     Do lado de dentro da tampa, você nota um desenho estranho.
-    Dentro da caixa está uma pequena chave.
+    Dentro da caixa está uma pequena chave.\n
 ''')
         escolha_caixa = ['PEGAR', 'VOLTAR']
         caixa = input("   >> ")
@@ -48,8 +61,8 @@ def caminhoDireita():
             global chave_chavosa
             if caixa.upper() == escolha_caixa[0]:
                 chave_chavosa = True
-                print('''
-   Você pegou uma chave simples
+                slowprint('''
+   Você pegou uma chave simples\n
 ''')
                 chavosa = input("   >> ")
                 while(chavosa.upper() != 'VOLTAR'):
@@ -61,11 +74,11 @@ def caminhoDireita():
             
 #--------------- CAMINHO DA ESQUERDA -------------
 def caminhoEsquerda():
-    print('''
+    slowprint('''
     Essa escrivaninha parece ter sido muito usada,
     mas não há nada sobre ela além de inscrições talhadas no tampo.
     Talvez alguém tenha feito isso com as próprias unhas.
-    Na parte da frente, existe uma gaveta. No meio dela há uma abertura.
+    Na parte da frente, existe uma gaveta. No meio dela há uma abertura.\n
 ''')
     escolha_mesa = ['VOLTAR', 'LER', 'ABRIR']
     mesa = input("   >> ")
@@ -75,9 +88,9 @@ def caminhoEsquerda():
         if mesa.upper() == escolha_mesa[0]:
             comodo()
         elif mesa.upper() == escolha_mesa[1]:
-            print('''
+            slowprint('''
     Os arranhões formam números fora de uma sequencia lógica
-            14 1 15   3 15 14 6 9 5   14 5 12 5 19
+            14 1 15   3 15 14 6 9 5   14 5 12 5 19\n
 ''')
             tampo = input("   >> ")
             while(tampo.upper() != 'VOLTAR'):
@@ -86,14 +99,14 @@ def caminhoEsquerda():
                 caminhoEsquerda()
         elif mesa.upper() == escolha_mesa[2]:
             if chave_chavosa == True:
-                print('''
+                slowprint('''
     A chave se encaixou muito bem e um baixo ruído
-    soa quando a tranca se desfaz.
+    soa quando a tranca se desfaz.\n
 ''')
-                print('''
+                slowprint('''
     A gaveta está vazia, mas o fundo dela está marcado
     com algo que você espera ser tinta vermelha:
-                    18 21 13 15
+                    18 21 13 15\n
 ''')
                 chavinha = input("   >> ")
                 while(chavinha.upper() != 'VOLTAR'):
@@ -101,8 +114,8 @@ def caminhoEsquerda():
                 else:
                     caminhoEsquerda()
             elif chave_chavosa == False:
-                print('''
-    Você não pode abrir a gaveta apenas com os dedos
+                slowprint('''
+    Você não pode abrir a gaveta apenas com os dedos\n
 ''')
             while(mesa.upper() != 'VOLTAR'):
                 mesa = input("   >> ")
@@ -111,9 +124,9 @@ def caminhoEsquerda():
 
 #--------------- CAMINHO DA FRENTE ----------------
 def caminhoFrente():
-    print('''
+    slowprint('''
     A porta não abre. Há uma tranca eletrônica pedindo
-    por uma senha de quatro caracteres.
+    por uma senha de quatro caracteres.\n
 ''')
     escolha_porta = ['VOLTAR', 'RUMO', 'DERRUBAR']
     porta = input("   >> ")
@@ -123,7 +136,7 @@ def caminhoFrente():
         if porta.upper() == escolha_porta[0]:
             comodo()
         if porta.upper() == escolha_porta[1] or escolha_porta[2]:
-            print('''
+            slowprint('''
     A porta se abre com um ranger sinistro, te fazendo perceber que apenas
     uma tranca eletrônica não a salvaria de se abrir com força bruta.
 
@@ -131,32 +144,32 @@ def caminhoFrente():
     está e muito menos se lembra de como chegou aqui.
 
     Uma sensação estranha se apossa de você, como se o atraísse a olhar
-    para trás e, ao mesmo tempo, atiçasse seu instinto de correr para bem longe...  
+    para trás e, ao mesmo tempo, atiçasse seu instinto de correr para bem longe...\n
 ''')
             escolha_externa = ['VIRAR', 'OLHAR PARA TRÁS', 'OLHAR PARA TRAS']
             decisao_2 = input("   >> ")
             while(decisao_2.upper() not in escolha_externa):
                 decisao_2 = input("   >> ")
             else:
-                print('''
+                slowprint('''
     O cômodo estranho em que você acordou não está mais lá. Tudo que resta são
     apenas ruínas que mal sobreviveram a um incêndio. Só então, percebe o cheiro intenso
     de madeira queimada, há fuligem mesmo em suas mãos.
 
-    "O que está acontecendo?"
+    "O que está acontecendo?"\n
 ''')
-                print('''
-                                    .
-                                    .
-                                    .
+                veryslowprint('''
+.
+.
+.
 ''')    
-                print('''
-                            Obrigado por jogar!
+                slowprint('''
+                            Obrigado por jogar!\n
 ''')               
                 escolha_final = ['S', 'N']
-                fim = input("  Deseja jogar outra vez? S/N\n   > ")
+                fim = input("    Deseja jogar outra vez? S/N\n\n     > ")
                 while(fim.upper() not in escolha_final):
-                    fim = input("  Deseja jogar outra vez? S/N\n   > ")
+                    fim = input("    Deseja jogar outra vez? S/N\n\n     > ")
                 else:
                     if fim.upper() == escolha_final[0]:
                         inicio()
