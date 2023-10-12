@@ -115,16 +115,42 @@ def caminhoFrente():
     A porta não abre. Há uma tranca eletrônica pedindo
     por uma senha de quatro caracteres.
 ''')
-    escolha_porta = ['VOLTAR', 'RUMO']
+    escolha_porta = ['VOLTAR', 'RUMO', 'DERRUBAR']
     porta = input("   >> ")
     while(porta.upper() not in escolha_porta):
         porta = input("   >> ")
     else:
         if porta.upper() == escolha_porta[0]:
             comodo()
-        if porta.upper() == escolha_porta[1]:
+        if porta.upper() == escolha_porta[1] or escolha_porta[2]:
             print('''
-                    Obrigado por jogar o tutorial!
+    A porta se abre com um ranger sinistro, te fazendo perceber que apenas
+    uma tranca eletrônica não a salvaria de se abrir com força bruta.
+
+    À sua frente não há nada além de uma floresta densa, você não sabe onde
+    está e muito menos se lembra de como chegou aqui.
+
+    Uma sensação estranha se apossa de você, como se o atraísse a olhar
+    para trás e, ao mesmo tempo, atiçasse seu instinto de correr para bem longe...  
+''')
+            escolha_externa = ['VIRAR', 'OLHAR PARA TRÁS', 'OLHAR PARA TRAS']
+            decisao_2 = input("   >> ")
+            while(decisao_2.upper() not in escolha_externa):
+                decisao_2 = input("   >> ")
+            else:
+                print('''
+    O cômodo estranho em que você acordou não está mais lá. Tudo que resta são
+    apenas ruínas que mal sobreviveram a um incêndio. Só então, percebe o cheiro intenso
+    de madeira queimada, há fuligem mesmo em suas mãos.
+
+    "O que está acontecendo?"
+''')
+                print('''
+                        Obrigado por jogar!
+                                .
+                                .
+                                .
+                            Continua?
 ''')
             
 if __name__ == "__main__":
