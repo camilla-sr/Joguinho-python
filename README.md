@@ -2,7 +2,7 @@ Bem-vindo a essa demo de respeito.
 
 Para executá-la apenas siga os passos:
 
-baixe o arquivo .rar e descompacte >> dist >> Dylendious >> Dyslendious.exe
+baixe o arquivo .rar e descompacte >> dist >> dylendious >> dylendious.exe
 
 #########################################
 
