@@ -146,12 +146,22 @@ def caminhoFrente():
     "O que está acontecendo?"
 ''')
                 print('''
-                        Obrigado por jogar!
-                                .
-                                .
-                                .
-                            Continua?
-''')
+                                    .
+                                    .
+                                    .
+''')    
+                print('''
+                            Obrigado por jogar!
+''')               
+                escolha_final = ['S', 'N']
+                fim = input("  Deseja jogar outra vez? S/N\n   > ")
+                while(fim.upper() not in escolha_final):
+                    fim = input("  Deseja jogar outra vez? S/N\n   > ")
+                else:
+                    if fim.upper() == escolha_final[0]:
+                        inicio()
+                    elif fim.upper() == escolha_final[1]:
+                        SystemExit
             
 if __name__ == "__main__":
     inicio()
