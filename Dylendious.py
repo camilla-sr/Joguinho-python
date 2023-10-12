@@ -11,15 +11,15 @@ def inicio():
 ''')
     resposta_1 = input("   >> ")
     while(resposta_1.upper() != 'LEVANTAR'):
-        resposta_1 = input(" >> ")
+        resposta_1 = input("   >> ")
     else:
         comodo()
 
 def comodo():
         print('''
     É um cômodo é pequeno.
-    À sua ESQUERDA há uma escrivaninha velha
-    DIREITA, uma caixa, e à FRENTE uma porta.
+    À sua ESQUERDA há uma escrivaninha velha,
+    à DIREITA, uma caixa, e à FRENTE uma porta.
 ''')
         caminho = ['ESQUERDA', 'DIREITA', 'FRENTE']
         decisao_1 = input("   >> ")
@@ -49,7 +49,7 @@ def caminhoDireita():
             if caixa.upper() == escolha_caixa[0]:
                 chave_chavosa = True
                 print('''
-   Você pegou a chave uma chave simples
+   Você pegou uma chave simples
 ''')
                 chavosa = input("   >> ")
                 while(chavosa.upper() != 'VOLTAR'):
@@ -67,7 +67,7 @@ def caminhoEsquerda():
     Talvez alguém tenha feito isso com as próprias unhas.
     Na parte da frente, existe uma gaveta. No meio dela há uma abertura.
 ''')
-    escolha_mesa = ['VOLTAR', 'LER', 'ABRIR COM CHAVE']
+    escolha_mesa = ['VOLTAR', 'LER', 'ABRIR']
     mesa = input("   >> ")
     while(mesa.upper() not in escolha_mesa):
         mesa = input("   >> ")
@@ -87,8 +87,12 @@ def caminhoEsquerda():
         elif mesa.upper() == escolha_mesa[2]:
             if chave_chavosa == True:
                 print('''
+    A chave se encaixou muito bem e um baixo ruído
+    soa quando a tranca se desfaz.
+''')
+                print('''
     A gaveta está vazia, mas o fundo dela está marcado
-    com algo que você espera ser tinta vermelha
+    com algo que você espera ser tinta vermelha:
                     18 21 13 15
 ''')
                 chavinha = input("   >> ")
@@ -97,7 +101,9 @@ def caminhoEsquerda():
                 else:
                     caminhoEsquerda()
             elif chave_chavosa == False:
-                print("Você não pode abrir a gaveta apenas com os dedos")
+                print('''
+    Você não pode abrir a gaveta apenas com os dedos
+''')
             while(mesa.upper() != 'VOLTAR'):
                 mesa = input("   >> ")
             else:
